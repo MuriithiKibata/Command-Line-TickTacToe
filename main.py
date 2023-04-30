@@ -24,7 +24,7 @@ class Tic_Tack_Toe:
     else:
       print("THAT POSTION IS TAKEN")
     
-  #This function is responsible for checks if one of the WIN_COMBO exits in the board array. If there is it return Game Over
+  #This function is responsible for checks if one of the WIN_COMBO exits in the board array. If it is there return Game Over.
   def game_over(self, symbol):
     arr = []
     status = ""
@@ -62,7 +62,7 @@ class Tic_Tack_Toe:
    for i in range(0, 9):
      if board[i] == "":
        print(f"Postion {i} is available \n")
-  #Prints Out the instructions of how the game should be played
+  #Prints Out the instructions of how the game should be played.
   @classmethod
   def game_instructions(self):
     board = ["0","1","2","3","4","5","6","7","8"]
@@ -94,17 +94,17 @@ player_one = Tic_Tack_Toe(player1_details[0], player1_details[1])
 player_two = Tic_Tack_Toe(player2_details[0], player2_details[1])
   
 i = 1
-#variable that is used to control wether the game should carry on or has been won.
+#Variable that is used to control whether the game should carry on or has been won.
 game_controller = "Continue"
 
 #Game loop
 while i < len(board) + 1 and game_controller != "Game Over":
-#Determines who's turn it is two play
+#Determines who's turn it is to play.
   if i % 2 == 0:
     turn = player_two.name
   elif i % 2 == 1:
     turn = player_one.name
-    #Board index where symbol should be placed
+    #Board index where symbol should be placed.
   num = input(f"{turn} Enter a position: ")
 
   if turn == player_one.name:
@@ -112,9 +112,9 @@ while i < len(board) + 1 and game_controller != "Game Over":
     player_one.render_icon(int(num), player_one.symbol)
     #Board is rendered
     player_one.render_board()
-    #Variable current_player is set to the current player
+    #Variable current_player is set to the current player.
     current_player = player_one.name
-    #Checks if player_ones symbol is present on the board as a win combo
+    #Checks if player_ones symbol is present on the board as a win combo.
     game_controller = player_one.game_over(player_one.symbol)
   else:
     #Symbol is placed on the board at a given index.
