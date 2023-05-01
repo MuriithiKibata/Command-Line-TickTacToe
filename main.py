@@ -1,6 +1,6 @@
 #Array that represents the board.
 board = ["","","","","","","","",""]
-#2D Array that contain arrays each containing numbers which correspond to indexs on the above board array. Each number combination is series which if a player achieve results in a win.
+#2D Array that contain arrays each containing numbers which correspond to indexs on the above board array. Each number combination is series which if a player achieves results in a win.
 WIN_COMBO =  [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6]]
   
 class Tic_Tack_Toe:
