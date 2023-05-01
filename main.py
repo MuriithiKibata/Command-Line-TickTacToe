@@ -26,35 +26,16 @@ class Tic_Tack_Toe:
     
   #This function is responsible for checks if one of the WIN_COMBO exits in the board array. If it is there return Game Over.
   def game_over(self, symbol):
-    arr = []
-    status = ""
-    for i in range(0, 3):
-      arr.append(board[WIN_COMBO[0][i]])
+   arr = []
+   status = ""
+   for i in range(0, len(WIN_COMBO)):
+    for j in range(0, 3):
+     arr.append(board[WIN_COMBO[i][j]])
     if arr.count(symbol) == 3:
       status = "Game Over"
     arr.clear()
     
-    for i in range(0, 3):
-      arr.append(board[WIN_COMBO[1][i]])
-    if arr.count(symbol) == 3:
-      status = "Game Over"
-    arr.clear()
-    
-    for i in range(0, 3):
-     arr.append(board[WIN_COMBO[2][i]])
-    if arr.count(symbol) == 3:
-      status = "Game Over"
-    arr.clear()
-  
-    
-    
-    for i in range(0, 3):
-     arr.append(board[WIN_COMBO[3][i]])
-    if  arr.count(symbol) == 3:
-      status = "Game Over"
-      
-    arr.clear()
-    return status
+   return status
 
   #Checks which postions are available
   @classmethod
